@@ -9,11 +9,11 @@ let comando = argv._[0];
 switch (comando) {
     case 'crear':
         let tarea = tareas.crear(argv.descripcion);
-        console.log(tarea);
+        console.log(tarea.blue);
         break;
     case 'actualizar':
         let resp = tareas.actualizar(argv.descripcion, argv.completado);
-        console.log(resp);
+        console.log(resp.rainbow);
         break;
     case 'borrar':
         let borrado = tareas.borrar(argv.descripcion);
@@ -30,5 +30,5 @@ switch (comando) {
         break;
 
     default:
-        console.log('Comando no reconocido');
+        console.log('Comando no reconocido'.red);
 }

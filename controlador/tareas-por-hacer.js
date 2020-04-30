@@ -49,7 +49,8 @@ const crear = (descripcion) => {
     }
     tareasPorHacer.push(tarea);
     guardarDB();
-    return tarea;
+
+    return "Tarea agregada";
 }
 
 /*Funcion flecha listar*/
