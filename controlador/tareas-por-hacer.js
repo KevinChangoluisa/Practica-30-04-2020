@@ -53,9 +53,16 @@ const crear = (descripcion) => {
 }
 
 /*Funcion flecha listar*/
-const getLista = () => {
+const getLista = (opc) => {
     cargarDB();
-    return tareasPorHacer;
+    if (opc) {
+        let pendiente = tareasPorHacer.filter(tarea => tarea.completado === true);
+        tareasPorHacer = pendiente;
+        return tareasPorHacer
+    } else {
+        return tareasPorHacer
+    }
+
 }
 
 /*Funcion flecha actualizar

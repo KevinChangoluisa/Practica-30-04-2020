@@ -1,7 +1,7 @@
 const descripcion = {
     demand: true,
     alias: 'd',
-    desc: 'Descipcion de la tareas'
+    desc: 'Descripcion de las tareas'
 }
 
 const completado = {
@@ -10,6 +10,11 @@ const completado = {
     desc: 'Marca como completada o pendiente una tarea'
 }
 
+const pendiente = {
+    alias: 'p',
+    desc: 'Tareas pendientes'
+
+}
 const argv = require('yargs')
     .command('crear', 'Crear una tarea', {
         descripcion
@@ -21,10 +26,13 @@ const argv = require('yargs')
     .command('borrar', 'Borrar una tarea', {
         descripcion
     })
-    .command('listar', 'Listar una tarea', {})
+    .command('listar', 'Listar una tarea', {
+        pendiente
+    })
     .argv;
 
 //exportamos el modulo
+
 module.exports = {
     argv
 }

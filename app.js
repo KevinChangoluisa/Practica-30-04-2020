@@ -9,6 +9,7 @@ let comando = argv._[0];
 switch (comando) {
     case 'crear':
         let tarea = tareas.crear(argv.descripcion);
+        console.log(tarea);
         break;
     case 'actualizar':
         let resp = tareas.actualizar(argv.descripcion, argv.completado);
@@ -19,14 +20,15 @@ switch (comando) {
         console.log(borrado);
         break;
     case 'listar':
-        let lista = tareas.getLista();
-        console.log('============== TAREAS ==============='.green);
+        let lista = tareas.getLista(argv.pendiente);
+        console.log("============== TAREAS =============".green);
         for (let tarea of lista) {
-            console.log(`Descripcion:  ${tarea.descripcion}`);
-            console.log(`Completado:   ${tarea.completado}\n`);
+            console.log(`Desripcion: ${tarea.descripcion}`);
+            console.log(`Completado: ${tarea.completado}\n`);
         }
-        console.log('======================================'.green);
+        console.log("===================================".green);
         break;
+
     default:
         console.log('Comando no reconocido');
 }
