@@ -28,7 +28,6 @@ switch (comando) {
         }
         console.log("===================================".green);
         break;
-
     default:
         console.log('Comando no reconocido'.red);
 }
